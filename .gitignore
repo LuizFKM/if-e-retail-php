@@ -13,10 +13,10 @@
 !/tmp/sessions/empty
 /tmp/tests/*
 !/tmp/tests/empty
-
+.idea/
 /logs/*
 !/logs/empty
-
+composer.phar
 # CakePHP 2
 
 /app/tmp/*
