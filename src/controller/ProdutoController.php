@@ -41,7 +41,7 @@ class ProdutoController{
         }catch (Exception $ex){
             echo "Falha ao remover produto" . $ex->getMessage();
         } finally {
-            header('Location: ', BASE_URL . '/produtos');
+            header('Location: ' . BASE_URL . '/produtos');
             exit;
         }
     }
