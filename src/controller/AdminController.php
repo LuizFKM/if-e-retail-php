@@ -27,7 +27,7 @@ class AdminController{
         }catch(Exception $ex){
             echo "Falha ao buscar funcionario " . $ex->getMessage();
         }finally{
-            require __DIR__ . "/../view/lista-funcinarios.php";
+            require __DIR__ . "/../view/lista-funcionarios.php";
         }
     }
 
