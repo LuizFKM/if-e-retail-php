@@ -15,9 +15,9 @@ $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) 
 
     // Produtos
     $r->get('/produtos', 'ProdutoController@listar');
-    $r->get('/produtos/{id}', 'ProdutoController@buscar');
     $r->get('/produtos/novo', 'ProdutoController@novo');
     $r->post('/produtos/cadastrar', 'ProdutoController@cadastrar');
+    $r->get('/produtos/{id}', 'ProdutoController@buscar');
     $r->post('/produtos/{id}/remover', 'ProdutoController@remover');
 
     // Pedidos

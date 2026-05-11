@@ -37,7 +37,6 @@
                 <td><?= htmlspecialchars($produto->getDescricao()) ?></td>
                 <td><?= htmlspecialchars($produto->getQuantidade()) ?></td>
                 <td>R$ <?= number_format($produto->getPrecoUnitario(), 2, ',', '.') ?></td>
-                <td><?= htmlspecialchars($produto->getStatus()) ?></td>
                 <td>
                     <a href="<?= BASE_URL . '/produtos/' . $produto->getID() ?>">Visualizar</a>
                     |

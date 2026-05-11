@@ -3,7 +3,7 @@
 <html lang="pt-br">
 <head>
 
-    <?php require_once "templates/template-head.php" ?>;
+    <?php require_once "templates/template-head.php" ?>
     <title>Cadastro de produtos</title>
 </head>
 

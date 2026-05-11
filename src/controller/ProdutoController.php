@@ -39,10 +39,10 @@ class ProdutoController{
             $produto->setPrecoUnitario($precoUnitario);
             $produto->setQuantidade($quantidade);
             ProdutoDAO::salvar($produto);
-            header('Location' . BASE_URL . '/produtos/novo');
+            header('Location:' . BASE_URL . '/produtos/novo');
         }catch(Exception $ex){
             echo 'Falha ao cadastrar o produto.' . $ex->getMessage();
-            header('Location' . BASE_URL . '/produtos/novo');
+            header('Location:' . BASE_URL . '/produtos/novo');
         } finally {
             exit;
         }
