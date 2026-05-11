@@ -2,12 +2,12 @@
 <!doctype html>
 <html lang="pt-br">
 <head>
-    <?php require_once "templates/template-head.php" ?>
+    <?php require_once __DIR__ . "/templates/template-head.php" ?>
     <title>Cadastro de Funcionário</title>
 </head>
 <body>
-<h1>Cadastro de Funcionário</h1>
-<div class="container">
+    <?php require_once __DIR__ . "/templates/template-menu.php" ?>
+        <h1>Cadastro de Funcionário</h1>
     <h3>Preencha o formulário</h3>
     <div class="form">
         <form action="<?= BASE_URL . '/admin/cadastrar' ?>" method="POST">
@@ -46,6 +46,6 @@
             <button type="submit">Cadastrar</button>
         </form>
     </div>
-</div>
+    <?php require_once __DIR__ . "/templates/template-rodape.php" ?>
 </body>
 </html>

@@ -2,14 +2,14 @@
 <!doctype html>
 <html lang="pt-br">
 <head>
-    <?php require_once "templates/template-head.php" ?>
+    <?php require_once __DIR__ . "/templates/template-head.php" ?>
     <title>Cadastro de Cliente</title>
 </head>
 <body>
-<h1>Cadastro de Cliente</h1>
-<div class="container">
-    <h3>Preencha o formulário</h3>
-    <div class="form">
+    <?php require_once __DIR__ . "/templates/template-menu.php" ?>
+        <h1>Cadastro de Cliente</h1>
+        <h3>Preencha o formulário</h3>
+        <div class="form">
         <form action="<?= BASE_URL . '/clientes/cadastrar' ?>" method="POST">
             <input type="hidden" name="id" value="<?= htmlspecialchars($cliente->getID() ?? '') ?>">
 
@@ -31,6 +31,6 @@
             <button type="submit">Cadastrar</button>
         </form>
     </div>
-</div>
+    <?php require_once __DIR__ . "/templates/template-rodape.php" ?>
 </body>
 </html>
