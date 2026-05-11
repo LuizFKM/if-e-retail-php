@@ -12,6 +12,9 @@ use Doctrine\Common\Collections\Collection;
 abstract class UserModel extends GenericModel{
     #[ORM\Column(type:'string')]
     private $name;
+
+    #[ORM\Column(type:'string')]
+    private $login;
     #[ORM\Column(type:'string')]
     private $cpf;
     #[ORM\OneToOne(targetEntity: Endereco::class, cascade: ['all'], orphanRemoval: true, fetch: 'LAZY')]
@@ -28,17 +31,6 @@ abstract class UserModel extends GenericModel{
     private $tipo;
 
 
-
-    public function __construct($name, $cpf, $dataNascimento, $senha, $tipo) {
-        $this->name = $name;
-        $this->cpf = $cpf;
-        $this->dataNascimento = $dataNascimento;
-        $this->senha = $senha;
-        $this->tipo = $tipo;
-
-        $this->endereco = null;
-        $this->contatos = new ArrayCollection();
-    }
     public function setName($name){
         $this->name=$name;
     }
@@ -89,6 +81,16 @@ abstract class UserModel extends GenericModel{
 
     public function setTipo($tipo){
         $this->tipo=$tipo;
+    }
+
+    public function getLogin()
+    {
+        return $this->login;
+    }
+
+    public function setLogin($login): void
+    {
+        $this->login = $login;
     }
 
     public function getTipo(){

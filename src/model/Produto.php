@@ -17,17 +17,6 @@ class Produto extends GenericModel
     #[ORM\Column(type: "decimal", precision: 10, scale: 2)]
     private $precoUnitario;
 
-    #[ORM\Column(type: "string")]
-    private $status;
-
-
-    public function __construct($descricao, $quantidade, $precoUnitario, $status)
-    {
-        $this->descricao = $descricao;
-        $this->quantidade = $quantidade;
-        $this->precoUnitario = $precoUnitario;
-        $this->status = $status;
-    }
 
     public function setDescricao($descricao)
     {
@@ -57,15 +46,5 @@ class Produto extends GenericModel
     public function getPrecoUnitario()
     {
         return $this->precoUnitario;
-    }
-
-    public function setStatus($status)
-    {
-        $this->status = $status;
-    }
-
-    public function getStatus()
-    {
-        return $this->status;
     }
 }
