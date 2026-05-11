@@ -10,6 +10,8 @@ $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) 
 
     // Clientes
     $r->get('/clientes', 'ClienteController@listar');
+    $r->get('/clientes/novo', 'ClienteController@novo');
+    $r->post('/clientes/cadastrar', 'ClienteController@cadastrar');
     $r->get('/clientes/{id}', 'ClienteController@buscar');
     $r->post('/clientes/{id}/remover', 'ClienteController@remover');
 
