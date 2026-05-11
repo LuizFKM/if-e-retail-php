@@ -27,6 +27,8 @@ $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) 
 
     // Admin
     $r->get('/admin', 'AdminController@listar');
+    $r->get('/admin/novo', 'AdminController@novo');
+    $r->post('/admin/cadastrar', 'AdminController@cadastrar');
     $r->get('/admin/{id}', 'AdminController@buscar');
     $r->post('/admin/{id}/remover', 'AdminController@remover');
 });
