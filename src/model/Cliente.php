@@ -21,13 +21,6 @@ class Cliente extends UserModel
     private $listaFavoritos;
 
 
-    public function __construct($name, $cpf, $dataNascimento, $senha, $tipo, $carrinho = null)
-    {
-        parent::__construct($name, $cpf, $dataNascimento, $senha, $tipo);
-        $this->carrinho = $carrinho;
-
-    }
-
 
     public function setCarrinho($carrinho){
         $this->carrinho = $carrinho;
