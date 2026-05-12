@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
+    <?php require_once __DIR__ . "/templates/template-head.php" ?>
     <title>Visualizar Cliente</title>
 </head>
 <body>
-    <h1>Visualizar Cliente</h1>
+    <?php require_once __DIR__ . "/templates/template-menu.php" ?>
+        <h1>Visualizar Cliente</h1>
     <p><a href="<?= BASE_URL . '/clientes' ?>">← Voltar para Clientes</a></p>
 
     <?php if (!empty($cliente)): ?>
@@ -23,5 +24,6 @@
     <?php else: ?>
     <p>Cliente não encontrado.</p>
     <?php endif; ?>
+    <?php require_once __DIR__ . "/templates/template-rodape.php" ?>
 </body>
 </html>

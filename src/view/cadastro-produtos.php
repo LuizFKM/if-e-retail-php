@@ -3,13 +3,13 @@
 <html lang="pt-br">
 <head>
 
-    <?php require_once "templates/template-head.php" ?>
+    <?php require_once __DIR__ . "/templates/template-head.php" ?>
     <title>Cadastro de produtos</title>
 </head>
 
 <body>
-<h1> Cadastro de produtos</h1>
-<div class="container">
+    <?php require_once __DIR__ . "/templates/template-menu.php" ?>
+        <h1>Cadastro de produtos</h1>
     <h3>Preencha o formulario</h3>
 
     <div class="form">
@@ -26,7 +26,6 @@
         </form>
 
     </div>
-</div>
-
+    <?php require_once __DIR__ . "/templates/template-rodape.php" ?>
 </body>
 </html>
