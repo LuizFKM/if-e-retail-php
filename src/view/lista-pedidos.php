@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
+    <?php require_once __DIR__ . "/templates/template-head.php" ?>
     <title>Pedidos</title>
 </head>
 <body>
-    <h1>Pedidos</h1>
-    <p><a href="<?= BASE_URL ?>">← Início</a></p>
+    <?php require_once __DIR__ . "/templates/template-menu.php" ?>
+        <h1>Pedidos</h1>
 
     <?php if (isset($pedido)): ?>
     <h2>Resultado da busca</h2>
@@ -52,5 +52,6 @@
     <?php else: ?>
     <p>Nenhum pedido cadastrado.</p>
     <?php endif; ?>
+    <?php require_once __DIR__ . "/templates/template-rodape.php" ?>
 </body>
 </html>

@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
+    <?php require_once __DIR__ . "/templates/template-head.php" ?>
     <title>Clientes</title>
 </head>
 <body>
-    <h1>Clientes</h1>
-    <p><a href="<?= BASE_URL ?>">← Início</a></p>
+    <?php require_once __DIR__ . "/templates/template-menu.php" ?>
+        <h1>Clientes</h1>
 
     <?php if (!empty($clientes)): ?>
     <table border="1" cellpadding="6">
@@ -38,5 +38,6 @@
     <?php else: ?>
     <p>Nenhum cliente cadastrado.</p>
     <?php endif; ?>
+    <?php require_once __DIR__ . "/templates/template-rodape.php" ?>
 </body>
 </html>

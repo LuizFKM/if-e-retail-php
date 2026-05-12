@@ -34,7 +34,7 @@ class ProdutoController{
         $produto = $id ? ProdutoDAO::buscarPorId($id) : new Produto();
         try{
             if(empty($produto))
-                throw new Excpetion("Produto nao encontrado");
+                throw new Exception("Produto nao encontrado");
             $produto->setDescricao($descricao);
             $produto->setPrecoUnitario($precoUnitario);
             $produto->setQuantidade($quantidade);
