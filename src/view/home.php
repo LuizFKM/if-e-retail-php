@@ -1,18 +1,24 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
+    <?php require_once "templates/template-head.php"?>
     <title>IF E-Retail - Início</title>
 </head>
 <body>
-    <h1>IF E-Retail</h1>
-    <nav>
-        <ul>
-            <li><a href="<?= BASE_URL . '/clientes' ?>">Clientes</a></li>
-            <li><a href="<?= BASE_URL . '/produtos' ?>">Produtos</a></li>
-            <li><a href="<?= BASE_URL . '/pedidos' ?>">Pedidos</a></li>
-            <li><a href="<?= BASE_URL . '/admin' ?>">Funcionários</a></li>
-        </ul>
-    </nav>
+    <?php require_once "templates/template-menu-cliente.php" ?>
+    <div class="container">
+        <p>IF E-Retail</p>
+        <nav>
+            <ul>
+                <li><a href="<?= BASE_URL . '/clientes' ?>">Clientes</a></li>
+                <li><a href="<?= BASE_URL . '/produtos' ?>">Produtos</a></li>
+                <li><a href="<?= BASE_URL . '/pedidos' ?>">Pedidos</a></li>
+                <li><a href="<?= BASE_URL . '/admin' ?>">Funcionários</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <?php require_once "templates/template-rodape.php" ?>
+
 </body>
 </html>
