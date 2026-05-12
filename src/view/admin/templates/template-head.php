@@ -1,0 +1,112 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+<style>
+    :root {
+        --coffee:       #3B2418;
+        --coffee-deep:  #2A170D;
+        --amber:        #C68A4C;
+        --amber-soft:   #E2B47A;
+        --sand:         #F5EBD9;
+        --cream:        #EFE4D2;
+        --paper:        #FBF6EC;
+        --ink:          #1B120B;
+        --line:         #E2D3BB;
+    }
+
+    body {
+        background-color: var(--paper);
+        color: var(--ink);
+    }
+
+    .sidebar {
+        background-color: var(--coffee-deep);
+        width: 260px;
+        min-width: 260px;
+        min-height: 100vh;
+    }
+
+    .sidebar .brand {
+        color: var(--amber);
+        font-size: 1.2rem;
+        font-weight: 700;
+        letter-spacing: 1px;
+        text-decoration: none;
+    }
+
+    .sidebar .brand:hover {
+        color: var(--amber-soft);
+    }
+
+    .sidebar .nav-link {
+        color: var(--sand);
+        border-radius: 6px;
+        padding: 0.5rem 0.75rem;
+        transition: background 0.2s, color 0.2s;
+    }
+
+    .sidebar .nav-link:hover {
+        background-color: var(--coffee);
+        color: var(--amber-soft);
+    }
+
+    .sidebar .nav-link.active {
+        background-color: var(--coffee);
+        color: var(--amber);
+        font-weight: 600;
+    }
+
+    .sidebar .section-label {
+        color: var(--amber);
+        font-size: 0.7rem;
+        font-weight: 700;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+    }
+
+    .sidebar hr {
+        border-color: var(--coffee);
+        opacity: 1;
+    }
+
+    .btn-amber {
+        background-color: var(--amber);
+        color: var(--coffee-deep);
+        border: none;
+        font-weight: 600;
+    }
+
+    .btn-amber:hover {
+        background-color: var(--amber-soft);
+        color: var(--coffee-deep);
+    }
+
+    .main-content {
+        background-color: var(--paper);
+        flex-grow: 1;
+        padding: 2rem;
+        min-height: 100vh;
+    }
+
+    .page-title {
+        color: var(--coffee);
+        font-weight: 700;
+        border-bottom: 2px solid var(--line);
+        padding-bottom: 0.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    table thead {
+        background-color: var(--coffee);
+        color: var(--sand);
+    }
+
+    table tbody tr:hover {
+        background-color: var(--cream);
+    }
+
+    .table {
+        border-color: var(--line);
+    }
+</style>

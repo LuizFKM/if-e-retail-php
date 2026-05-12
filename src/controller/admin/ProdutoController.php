@@ -1,6 +1,6 @@
 <?php
 
-namespace controller;
+namespace controllerdmin;
 
 use dao\ProdutoDAO;
 use Exception;
@@ -14,13 +14,13 @@ class ProdutoController{
         }catch(Exception $ex){
             echo "Falha ao listar produtos " . $ex->getMessage();
         } finally {
-            require __DIR__ . "/../view/lista-produtos.php";
+            require __DIR__ . "/../../view/admin/lista-produtos.php";
         }
     }
 
     public function novo(){
         $produto = new Produto();
-        require __DIR__ . "/../view/cadastro-produtos.php";
+        require __DIR__ . "/../../view/admin/cadastro-produtos.php";
     }
 
     public function cadastrar(){
@@ -58,7 +58,7 @@ class ProdutoController{
         }catch (Exception $ex){
             echo "Falha ao buscar produto" . $ex->getMessage();
         } finally {
-            require __DIR__ . "/../view/lista-produtos.php";
+            require __DIR__ . "/../../view/admin/lista-produtos.php";
         }
     }
 

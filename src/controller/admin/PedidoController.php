@@ -1,5 +1,5 @@
 <?php
-namespace controller;
+namespace controllerdmin;
 
 use Exception;
 use dao\PedidoDAO;
@@ -12,7 +12,7 @@ class PedidoController{
         }catch(Exception $ex){
             echo "erro ao listar pedidos" . $ex->getMessage();
         } finally {
-            require __DIR__ . "/../view/lista-pedidos.php";
+            require __DIR__ . "/../../view/admin/lista-pedidos.php";
         }
     }
 
@@ -26,7 +26,7 @@ class PedidoController{
         }catch(Exception $ex){
             echo "erro ao buscar pedido" . $ex->getMessage();
         } finally {
-            require __DIR__ . "/../view/lista-pedidos.php";
+            require __DIR__ . "/../../view/admin/lista-pedidos.php";
         }
     }
 

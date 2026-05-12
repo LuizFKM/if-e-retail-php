@@ -1,6 +1,6 @@
 <?php
 
-namespace controller;
+namespace controllerdmin;
 
 use dao\ClienteDAO;
 use Exception;
@@ -10,7 +10,7 @@ class ClienteController{
 
     public function novo(){
         $cliente = new Cliente();
-        require __DIR__ . "/../view/cadastro-clientes.php";
+        require __DIR__ . "/../../view/admin/cadastro-clientes.php";
     }
 
     public function cadastrar(){
@@ -48,7 +48,7 @@ class ClienteController{
         }catch(Exception $ex){
             echo "Falha ao listar os clientes" . $ex->getMessage();
         } finally {
-            require __DIR__ . "/../view/lista-clientes.php";
+            require __DIR__ . "/../../view/admin/lista-clientes.php";
         }
     }
 
@@ -62,7 +62,7 @@ class ClienteController{
         }catch(Exception $ex){
             echo "Falha ao buscar cliente" . $ex->getMessage();
         }finally{
-            require __DIR__ . "/../view/visualizar-cliente.php";
+            require __DIR__ . "/../../view/admin/visualizar-cliente.php";
         }
     }
 
