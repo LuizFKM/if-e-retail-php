@@ -1,6 +1,6 @@
 <?php
 
-namespace controllerdmin;
+namespace controller\admin;
 
 use dao\ProdutoDAO;
 use Exception;
@@ -24,12 +24,10 @@ class ProdutoController{
     }
 
     public function cadastrar(){
-        $id = filter_input(INPUT_POST, 'id', FILTER_SANITIZE_NUMBER_INT);
-        $descricao = filter_input(INPUT_POST, 'descricao', FILTER_SANITIZE_SPECIAL_CHARS);
+        $id            = filter_input(INPUT_POST, 'id', FILTER_SANITIZE_NUMBER_INT);
+        $descricao     = filter_input(INPUT_POST, 'descricao', FILTER_SANITIZE_SPECIAL_CHARS);
         $precoUnitario = filter_input(INPUT_POST, 'precoUnitario', FILTER_SANITIZE_NUMBER_FLOAT);
-        $quantidade = filter_input(INPUT_POST, 'quantidadeEmEstoque', FILTER_SANITIZE_NUMBER_INT);
-
-
+        $quantidade    = filter_input(INPUT_POST, 'quantidadeEmEstoque', FILTER_SANITIZE_NUMBER_INT);
 
         $produto = $id ? ProdutoDAO::buscarPorId($id) : new Produto();
         try{

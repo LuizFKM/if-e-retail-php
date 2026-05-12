@@ -1,6 +1,6 @@
 <?php
 
-namespace controllerdmin;
+namespace controller\admin;
 
 use Exception;
 use dao\AdminDAO;
@@ -42,15 +42,14 @@ class AdminController{
             $admin->setDataAdmissao(new \DateTime($dataAdmissao));
             $admin->setStatus($status);
             AdminDAO::salvar($admin);
-            header('Location:' . BASE_URL . '/admin/novo');
+            header('Location:' . BASE_URL . '/funcionarios/novo');
         } catch (Exception $ex) {
             echo 'Falha ao cadastrar o funcionário.' . $ex->getMessage();
-            header('Location:' . BASE_URL . '/admin/novo');
+            header('Location:' . BASE_URL . '/funcionarios/novo');
         } finally {
             exit;
         }
     }
-
 
     public function listar(){
         try{
@@ -87,9 +86,8 @@ class AdminController{
         }catch(Exception $ex){
             echo "Falha ao remover " . $ex->getMessage();
         }finally{
-            header('Location: ' . BASE_URL . "/admin");
+            header('Location: ' . BASE_URL . "/funcionarios");
             exit;
         }
     }
-
 }

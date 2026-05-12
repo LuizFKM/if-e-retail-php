@@ -1,5 +1,6 @@
 <?php
-namespace controllerdmin;
+
+namespace controller\admin;
 
 use Exception;
 use dao\PedidoDAO;
@@ -45,6 +46,4 @@ class PedidoController{
             exit;
         }
     }
-
 }
-

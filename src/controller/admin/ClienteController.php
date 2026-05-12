@@ -1,6 +1,6 @@
 <?php
 
-namespace controllerdmin;
+namespace controller\admin;
 
 use dao\ClienteDAO;
 use Exception;
@@ -40,7 +40,6 @@ class ClienteController{
             exit;
         }
     }
-
 
     public function listar(){
         try{
