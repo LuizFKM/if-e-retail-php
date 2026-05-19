@@ -26,8 +26,7 @@
                 <th>Descrição</th>
                 <th>Qtd.</th>
                 <th>Preço Unit.</th>
-                <th>Status</th>
-                <th>Ações</th>
+                <th class="text-center">Ações</th>
             </tr>
         </thead>
         <tbody>
@@ -38,10 +37,10 @@
                 <td><?= htmlspecialchars($produto->getQuantidade()) ?></td>
                 <td>R$ <?= number_format($produto->getPrecoUnitario(), 2, ',', '.') ?></td>
                 <td>
-                    <a href="<?= BASE_URL . '/produtos/' . $produto->getID() ?>">Visualizar</a>
+                    <a class="btn btn-outline-secondary bi bi-eye" href="<?= BASE_URL . '/produtos/' . $produto->getID() ?>"> Visualizar</a>
                     |
                     <form method="post" action="<?= BASE_URL . '/produtos/' . $produto->getID() . '/remover' ?>" style="display:inline">
-                        <button type="submit" onclick="return confirm('Remover produto?')">Remover</button>
+                        <button type="submit" class="btn btn-outline-danger bi bi-trash" onclick="return confirm('Remover produto?')"> Remover</button>
                     </form>
                 </td>
             </tr>
