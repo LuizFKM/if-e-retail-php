@@ -107,5 +107,21 @@ table tbody tr:hover {
 }
 
 .menu-cliente{
-   background-color: var(--coffee);
+    background-color: var(--sand);
+    color: var(--coffee-deep);
+}
+
+.login-button-cliente{
+    background: var(--coffee-deep);
+    color: var(--sand);
+    font-weight:bold;
+    border: none;
+    border-radius: 8px;
+    padding: 4px 8px 4px 8px;
+}
+
+.hero{
+    background: var(--line);
+    min-height: 400px;
+    font-family: sans-serif;
 }

@@ -6,8 +6,12 @@
 </head>
 <body>
     <?php require_once __DIR__ . "/templates/template-menu-cliente.php" ?>
-        <h1>IF-E-RETAIL</h1>
-        <p class="text-muted">Bem-vindo ao painel administrativo.</p>
+        <section class="hero w-100">
+            <div class="container hero-content row">
+                <div class="col">coluna 1</div>
+                <div class="col">coluna 2</div>
+            </div>
+        </section>
     <?php require_once __DIR__ . "/templates/template-rodape.php" ?>
 </body>
 </html>
