@@ -18,15 +18,15 @@ $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) 
 
     // Produtos
     $r->get('/painel-administrativo/produtos', 'admin\ProdutoController@listar');
-    $r->get('//painel-administrativoprodutos/novo', 'admin\ProdutoController@novo');
-    $r->post('//painel-administrativoprodutos/cadastrar', 'admin\ProdutoController@cadastrar');
-    $r->get('//painel-administrativoprodutos/{id}', 'admin\ProdutoController@buscar');
-    $r->post('//painel-administrativoprodutos/{id}/remover', 'admin\ProdutoController@remover');
+    $r->get('/painel-administrativo/produtos/novo', 'admin\ProdutoController@novo');
+    $r->post('/painel-administrativo/produtos/cadastrar', 'admin\ProdutoController@cadastrar');
+    $r->get('/painel-administrativo/produtos/{id}', 'admin\ProdutoController@buscar');
+    $r->post('/painel-administrativo/produtos/{id}/remover', 'admin\ProdutoController@remover');
 
     // Pedidos
-    $r->get('/pedidos', 'PedidoController@listar');
-    $r->get('/pedidos/{id}', 'PedidoController@buscar');
-    $r->post('/pedidos/{id}/remover', 'PedidoController@remover');
+    $r->get('/painel-administrativo/pedidos', 'admin\PedidoController@listar');
+    $r->get('/painel-administrativo/pedidos/{id}', 'admin\PedidoController@buscar');
+    $r->post('/painel-administrativo/pedidos/{id}/remover', 'admin\PedidoController@remover');
 
     // Admin
     $r->get('/admin', 'AdminController@listar');

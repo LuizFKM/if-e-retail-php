@@ -32,7 +32,7 @@ class ClienteController{
             $cliente->setTipo('cliente');
             $cliente->setDataNascimento(new \DateTime($dataNascimento));
             ClienteDAO::salvar($cliente);
-            header('Location:' . BASE_URL . '/clientes/novo');
+            header('Location:' . BASE_URL . '/');
         } catch (Exception $ex) {
             echo 'Falha ao cadastrar o cliente.' . $ex->getMessage();
             header('Location:' . BASE_URL . '/clientes/novo');

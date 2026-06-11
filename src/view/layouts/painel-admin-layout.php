@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <?php require_once __DIR__ . "/../templates/template-head.php" ?>
     <title>Painel Administrativo</title>
