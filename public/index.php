@@ -7,7 +7,8 @@ define('BASE_URL', '/if-e-retail-php');
 
 $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) {
     $r->get('/', 'HomeController@index');
-
+    $r->get('/painel-administrativo', 'admin\AdminController@index');
+    $r->get('/login', 'LoginController@index');
     // Clientes
     $r->get('/clientes', 'ClienteController@listar');
     $r->get('/clientes/novo', 'ClienteController@novo');
@@ -16,11 +17,11 @@ $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) 
     $r->post('/clientes/{id}/remover', 'ClienteController@remover');
 
     // Produtos
-    $r->get('/produtos', 'ProdutoController@listar');
-    $r->get('/produtos/novo', 'ProdutoController@novo');
-    $r->post('/produtos/cadastrar', 'ProdutoController@cadastrar');
-    $r->get('/produtos/{id}', 'ProdutoController@buscar');
-    $r->post('/produtos/{id}/remover', 'ProdutoController@remover');
+    $r->get('/painel-administrativo/produtos', 'admin\ProdutoController@listar');
+    $r->get('//painel-administrativoprodutos/novo', 'admin\ProdutoController@novo');
+    $r->post('//painel-administrativoprodutos/cadastrar', 'admin\ProdutoController@cadastrar');
+    $r->get('//painel-administrativoprodutos/{id}', 'admin\ProdutoController@buscar');
+    $r->post('//painel-administrativoprodutos/{id}/remover', 'admin\ProdutoController@remover');
 
     // Pedidos
     $r->get('/pedidos', 'PedidoController@listar');
@@ -58,9 +59,10 @@ switch ($route[0]) {
     case FastRoute\Dispatcher::FOUND:
         [$controllerClass, $action] = explode('@', $route[1]);
         $params = $route[2];
+        $controllerClass = str_replace('/', '\\', $controllerClass);
 
-        // Monta o nome completo da classe (Namespace) e instancia o Controller
-        $controllerNamespace = "controller\\{$controllerClass}";
+        // Olha como fica limpo:
+        $controllerNamespace = "App\\controller\\{$controllerClass}";
         $controller = new $controllerNamespace();
         $controller->$action($params);
         break;

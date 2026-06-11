@@ -1,5 +1,5 @@
 <?php
-namespace model;
+namespace App\model;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\MappedSuperclass]

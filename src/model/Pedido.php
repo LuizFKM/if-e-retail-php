@@ -1,6 +1,6 @@
 <?php
 
-namespace model;
+namespace App\model;
 use Doctrine\ORM\Mapping as ORM;
 #[ORM\Entity]
 #[ORM\Table(name:"tb_pedido")]

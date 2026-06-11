@@ -12,14 +12,8 @@
         <ul class="nav flex-column gap-1">
             <li class="nav-item">
                 <a class="nav-link d-flex align-items-center gap-2 <?= str_contains($_SERVER['REQUEST_URI'], '/produtos') ? 'active' : '' ?>"
-                   href="<?= BASE_URL . '/produtos' ?>">
+                   href="<?= BASE_URL . '/painel-administrativo/produtos' ?>">
                     <i class="bi bi-box-seam"></i> Produtos
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link d-flex align-items-center gap-2 <?= str_contains($_SERVER['REQUEST_URI'], '/clientes') ? 'active' : '' ?>"
-                   href="<?= BASE_URL . '/clientes' ?>">
-                    <i class="bi bi-people"></i> Clientes
                 </a>
             </li>
             <li class="nav-item">

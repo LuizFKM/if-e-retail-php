@@ -5,7 +5,7 @@
     <title>Pedidos</title>
 </head>
 <body>
-    <?php require_once __DIR__ . "/templates/template-menu.php" ?>
+    <?php require_once __DIR__ . "/templates/template-aside-left.php" ?>
         <h1>Pedidos</h1>
 
     <?php if (isset($pedido)): ?>

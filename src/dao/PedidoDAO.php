@@ -1,10 +1,10 @@
 <?php
 
-namespace dao;
+namespace App\dao;
 
 use Exception;
-use model\Pedido;
-use utils\Conexao;
+use App\model\Pedido;
+use App\utils\Conexao;
 
 class PedidoDAO extends GenericDAO
 {

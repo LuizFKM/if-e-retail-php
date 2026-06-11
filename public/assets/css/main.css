@@ -85,6 +85,11 @@ body {
     min-height: 100vh;
 }
 
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
 .page-title {
     color: var(--coffee);
     font-weight: 700;
@@ -107,8 +112,11 @@ table tbody tr:hover {
 }
 
 .menu-cliente{
-    background-color: var(--sand);
-    color: var(--coffee-deep);
+    background-color: var(--paper);
+    color: var(--coffee);
+    font-weight: bold;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
 .login-button-cliente{
@@ -118,10 +126,15 @@ table tbody tr:hover {
     border: none;
     border-radius: 8px;
     padding: 4px 8px 4px 8px;
+
 }
 
 .hero{
     background: var(--line);
     min-height: 400px;
     font-family: sans-serif;
+}
+
+.view-login, .view-cadastro-cliente{
+    background-color: var(--sand);
 }

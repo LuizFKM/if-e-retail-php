@@ -1,6 +1,6 @@
 <?php
 
-namespace model;
+namespace App\model;
 
 enum TipoUsuario: string {
     case CLIENTE = 'cliente';

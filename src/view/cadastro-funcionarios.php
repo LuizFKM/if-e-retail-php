@@ -6,7 +6,7 @@
     <title>Cadastro de Funcionário</title>
 </head>
 <body>
-    <?php require_once __DIR__ . "/templates/template-menu.php" ?>
+    <?php require_once __DIR__ . "/templates/template-aside-left.php" ?>
         <h1>Cadastro de Funcionário</h1>
     <h3>Preencha o formulário</h3>
     <div class="form">

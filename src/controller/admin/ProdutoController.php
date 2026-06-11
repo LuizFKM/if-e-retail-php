@@ -1,20 +1,23 @@
 <?php
 
-namespace controller;
+namespace App\controller\admin;
 
-use dao\ProdutoDAO;
+use App\dao\ProdutoDAO;
 use Exception;
-use model\Produto;
+use App\model\Produto;
 
 class ProdutoController{
 
     public function listar(){
         try{
             $produtos = ProdutoDAO::listar();
+            ob_start();
+            require __DIR__ . "/../../view/admin/lista-produtos.php";
+            $conteudo = ob_get_clean();
         }catch(Exception $ex){
             echo "Falha ao listar produtos " . $ex->getMessage();
         } finally {
-            require __DIR__ . "/../view/lista-produtos.php";
+            require __DIR__ . "/../../view/layouts/painel-admin-layout.php";
         }
     }
 

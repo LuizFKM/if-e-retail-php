@@ -1,16 +1,19 @@
 <?php
-
-namespace controller;
-
+namespace App\controller\admin;
+use App\dao\AdminDAO;
 use Exception;
-use dao\AdminDAO;
-use model\Admin;
+use App\model\Admin;
 
 class AdminController{
 
     public function novo(){
         $admin = new Admin();
-        require __DIR__ . "/../view/cadastro-funcionarios.php";
+        require __DIR__ . "/../../view/cadastro-funcionarios.php";
+    }
+
+    public function index()
+    {
+        require __DIR__ . '/../../view/layouts/painel-admin-layout.php';
     }
 
     public function cadastrar(){

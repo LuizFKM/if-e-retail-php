@@ -1,0 +1,12 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <?php require_once __DIR__ . "/../templates/template-head.php" ?>
+    <title>Painel Administrativo</title>
+</head>
+<body>
+<?php require_once __DIR__ . "/../templates/template-aside-left.php" ?>
+<?php echo $conteudo ?? ''; ?>
+<?php require_once __DIR__ . "/../templates/template-rodape.php" ?>
+</body>
+</html>
