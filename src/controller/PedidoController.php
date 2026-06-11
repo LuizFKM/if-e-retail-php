@@ -1,8 +1,8 @@
 <?php
-namespace controller;
+namespace App\controller;
 
 use Exception;
-use dao\PedidoDAO;
+use App\dao\PedidoDAO;
 
 class PedidoController{
 

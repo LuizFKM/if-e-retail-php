@@ -5,7 +5,7 @@
     <title>Funcionários</title>
 </head>
 <body>
-    <?php require_once __DIR__ . "/templates/template-menu.php" ?>
+    <?php require_once __DIR__ . "/templates/template-aside-left.php" ?>
         <h1>Funcionários</h1>
 
     <?php if (isset($admin)): ?>

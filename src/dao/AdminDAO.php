@@ -1,6 +1,6 @@
 <?php
 
-namespace dao;
+namespace App\dao;
 
 use Exception;
 use model\Admin;

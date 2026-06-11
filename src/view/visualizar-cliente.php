@@ -5,7 +5,7 @@
     <title>Visualizar Cliente</title>
 </head>
 <body>
-    <?php require_once __DIR__ . "/templates/template-menu.php" ?>
+    <?php require_once __DIR__ . "/templates/template-aside-left.php" ?>
         <h1>Visualizar Cliente</h1>
     <p><a href="<?= BASE_URL . '/clientes' ?>">← Voltar para Clientes</a></p>
 

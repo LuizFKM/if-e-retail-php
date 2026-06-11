@@ -1,10 +1,10 @@
 <?php
 
-namespace dao;
+namespace App\dao;
 
 use Exception;
-use model\GenericModel;
-use utils\Conexao;
+use App\model\GenericModel;
+use App\utils\Conexao;
 
 abstract class GenericDAO
 {

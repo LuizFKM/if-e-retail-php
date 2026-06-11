@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    <?php require_once __DIR__ . "/templates/template-menu.php" ?>
+    <?php require_once __DIR__ . "/templates/template-aside-left.php" ?>
         <h1>Cadastro de produtos</h1>
     <h3>Preencha o formulario</h3>
 

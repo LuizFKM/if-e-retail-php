@@ -8,12 +8,8 @@
     "name": "user/if-e-retail-php",
     "autoload": {
         "psr-4": {
-          "User\\IfERetailPhp\\": "src/",
-          "dao\\": "src/dao/",
-          "model\\": "src/model/",
-          "test\\": "test/",
-          "utils\\": "src/utils/",
-          "controller\\": "src/controller"
+            "App\\": "src/",
+            "Test\\": "test/"
         }
     },
     "authors": [

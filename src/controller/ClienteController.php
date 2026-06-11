@@ -1,10 +1,10 @@
 <?php
 
-namespace controller;
+namespace App\controller;
 
-use dao\ClienteDAO;
+use App\dao\ClienteDAO;
 use Exception;
-use model\Cliente;
+use App\model\Cliente;
 
 class ClienteController{
 

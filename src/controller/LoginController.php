@@ -2,10 +2,11 @@
 
 namespace App\controller;
 
-class HomeController
+class LoginController
 {
     public function index()
     {
-        require __DIR__ . '/../view/home.php';
+        require __DIR__ . '/../view/login.php';
     }
 }
+
