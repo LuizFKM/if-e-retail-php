@@ -16,14 +16,13 @@ class ProdutoController{
             $conteudo = ob_get_clean();
         }catch(Exception $ex){
             echo "Falha ao listar produtos " . $ex->getMessage();
-        } finally {
-            require __DIR__ . "/../../view/layouts/painel-admin-layout.php";
         }
+            require __DIR__ . "/../../view/layouts/painel-admin-layout.php";
     }
 
     public function novo(){
         $produto = new Produto();
-        require __DIR__ . "/../view/cadastro-produtos.php";
+        require __DIR__ . "/../../view/cadastro-produtos.php";
     }
 
     public function cadastrar(){

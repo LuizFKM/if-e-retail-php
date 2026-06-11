@@ -1,4 +1,4 @@
-<?php /** @var model\Cliente $cliente */ ?>
+<?php /** @var App\model\Cliente $cliente */ ?>
 <!doctype html>
 <html lang="pt-BR">
 <head>

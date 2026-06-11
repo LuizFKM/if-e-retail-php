@@ -18,7 +18,7 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link d-flex align-items-center gap-2 <?= str_contains($_SERVER['REQUEST_URI'], '/pedidos') ? 'active' : '' ?>"
-                   href="<?= BASE_URL . '/pedidos' ?>">
+                   href="<?= BASE_URL . '/painel-administrativo/pedidos' ?>">
                     <i class="bi bi-cart3"></i> Pedidos
                 </a>
             </li>

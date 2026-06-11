@@ -1,19 +1,21 @@
 <?php
-namespace App\controller;
+namespace App\controller\admin;
 
-use Exception;
 use App\dao\PedidoDAO;
+use Exception;
 
 class PedidoController{
 
     public function listar(){
         try{
             $pedidos = PedidoDAO::listar();
+            ob_start();
+            require __DIR__ . "/../../view/admin/lista-pedidos.php";
+            $conteudo = ob_get_clean();
         }catch(Exception $ex){
             echo "erro ao listar pedidos" . $ex->getMessage();
-        } finally {
-            require __DIR__ . "/../view/lista-pedidos.php";
         }
+        require __DIR__ . "/../../view/layouts/painel-admin-layout.php";
     }
 
     public function buscar(array $params){
@@ -26,7 +28,7 @@ class PedidoController{
         }catch(Exception $ex){
             echo "erro ao buscar pedido" . $ex->getMessage();
         } finally {
-            require __DIR__ . "/../view/lista-pedidos.php";
+            require __DIR__ . "/../../view/lista-pedidos.php";
         }
     }
 
@@ -44,6 +46,7 @@ class PedidoController{
             header('Location: ' . BASE_URL . '/pedidos');
             exit;
         }
+
     }
 
 }
