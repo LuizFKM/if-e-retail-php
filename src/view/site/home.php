@@ -10,7 +10,7 @@
             <div class="container hero-content mt-5">
                 <div class="row">
                     <div class="col">
-                        <div id="tag" class="border-1 rounded-5 p-2 mb-3">Nova Coleção 2026</div>
+                        <div id="tag" class="border-1 rounded-5 mb-3 bi bi-stars">Nova Coleção 2026</div>
                         <p class="slogan display-4">Estilo que fala <br> por <span>você</span></p>
                         <p class="slogan-two mb-5">Peças selecionadas com qualidade premium, entrega rápida e experiência de compra incomparável.</p>
                         <a role="button" class="button-style-1">Explorar coleção</a>
