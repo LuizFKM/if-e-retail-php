@@ -26,7 +26,7 @@
             </div>
 
             <div class="mb-3">
-                <label for="login" class="form-label">Login:</label>
+                <label for="login" class="form-label">Email:</label>
                 <input id="login" name="login" type="text" class="form-control" value="<?= htmlspecialchars($cliente->getLogin() ?? '') ?>" required/>
             </div>
 
