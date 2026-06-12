@@ -149,10 +149,15 @@ table tbody tr:hover {
 
 #tag{
     background-color: var(--white);
-    border: var(--line) solid 3px;
+    border: var(--line) solid;
     max-width: fit-content;
     font-weight: bold;
     color: var(--brown);
+    font-family: "Bookman Old Style Sans", sans-serif;
+    font-size: 12px;
+    padding: 2px 16px 2px 16px;
+    letter-spacing: 4px;
+
 }
 
 .slogan{
@@ -160,6 +165,7 @@ table tbody tr:hover {
     color: var(--coffee-deep);
     span{
         color: var(--brown);
+        font-style: italic;
     }
 }
 
