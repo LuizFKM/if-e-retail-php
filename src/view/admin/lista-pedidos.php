@@ -25,7 +25,7 @@
                 <td>
                     <a href="<?= BASE_URL . '/pedidos/' . $pedido->getID() ?>">Visualizar</a>
                     |
-                    <form method="post" action="<?= BASE_URL . '/pedidos/' . $pedido->getID() . '/remover' ?>" style="display:inline">
+                    <form method="post" action="<?= BASE_URL . '/painel-administrativo/pedidos/' . $pedido->getID() . '/remover' ?>" style="display:inline">
                         <button type="submit" onclick="return confirm('Remover pedido?')">Remover</button>
                     </form>
                 </td>

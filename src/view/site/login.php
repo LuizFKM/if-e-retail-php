@@ -1,10 +1,10 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
-    <?php require_once __DIR__ . "/templates/template-head.php" ?>
+    <?php require_once __DIR__ . "/../templates/template-head.php" ?>
     <title>Login</title>
 </head>
-<?php require_once __DIR__ . "/templates/template-menu-cliente.php" ?>
+<?php require_once __DIR__ . "/../templates/template-menu-cliente.php" ?>
 <body class="view-login">
 <div class="container-fluid min-vh-100 d-flex align-items-center justify-content-center">
 
@@ -36,6 +36,6 @@
     </form>
 </div>
 
-<?php require_once __DIR__ . "/templates/template-rodape.php" ?>
+<?php require_once __DIR__ . "/../templates/template-rodape.php" ?>
 </body>
 </html>

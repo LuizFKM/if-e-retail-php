@@ -2,10 +2,10 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
-    <?php require_once __DIR__ . "/templates/template-head.php" ?>
+    <?php require_once __DIR__ . "/../templates/template-head.php" ?>
     <title>Cadastro de Cliente</title>
 </head>
-<?php require_once __DIR__ . "/templates/template-menu-cliente.php" ?>
+<?php require_once __DIR__ . "/../templates/template-menu-cliente.php" ?>
 <body class="view-cadastro-cliente">
 
 <div class="container-fluid min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
@@ -56,6 +56,6 @@
     </div>
 </div>
 
-<?php require_once __DIR__ . "/templates/template-rodape.php" ?>
+<?php require_once __DIR__ . "/../templates/template-rodape.php" ?>
 </body>
 </html>

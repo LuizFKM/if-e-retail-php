@@ -10,7 +10,7 @@ class ClienteController{
 
     public function novo(){
         $cliente = new Cliente();
-        require __DIR__ . "/../view/cadastro-clientes.php";
+        require __DIR__ . "/../view/site/cadastro-clientes.php";
     }
 
     public function cadastrar(){

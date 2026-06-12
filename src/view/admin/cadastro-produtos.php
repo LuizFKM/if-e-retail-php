@@ -1,14 +1,14 @@
-<?php /** @var model\Produto $produto */ ?>
+<?php /** @var App\model\Produto $produto */ ?>
 <!doctype html>
 <html lang="pt-br">
 <head>
 
-    <?php require_once __DIR__ . "/templates/template-head.php" ?>
+    <?php require_once __DIR__ . "/../templates/template-head.php" ?>
     <title>Cadastro de produtos</title>
 </head>
 
 <body>
-    <?php require_once __DIR__ . "/templates/template-aside-left.php" ?>
+    <?php require_once __DIR__ . "/../templates/template-aside-left-admin.php" ?>
         <h1>Cadastro de produtos</h1>
     <h3>Preencha o formulario</h3>
 
@@ -26,6 +26,6 @@
         </form>
 
     </div>
-    <?php require_once __DIR__ . "/templates/template-rodape.php" ?>
+    <?php require_once __DIR__ . "/../templates/template-rodape.php" ?>
 </body>
 </html>

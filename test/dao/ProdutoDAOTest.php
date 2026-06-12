@@ -1,11 +1,11 @@
 <?php
 
-namespace test\dao;
+namespace Test\dao;
 
-use dao\ProdutoDAO;
-use model\Produto;
+use App\dao\ProdutoDAO;
+use App\model\Produto;
 use PHPUnit\Framework\TestCase;
-use utils\Conexao;
+use App\utils\Conexao;
 
 class ProdutoDAOTest extends TestCase
 {
@@ -21,7 +21,10 @@ class ProdutoDAOTest extends TestCase
 
     public function testSalvar()
     {
-        $produto = $this->criarProduto();
+        $produto = new Produto();
+        $produto->setDescricao("Notebook Dell");
+        $produto->setPrecoUnitario(3500.00);
+        $produto->setQuantidade(1);
         $salvo = ProdutoDAO::salvar($produto);
         $this->assertNotNull($salvo->getID());
     }

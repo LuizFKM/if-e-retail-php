@@ -8,7 +8,7 @@ class AdminController{
 
     public function novo(){
         $admin = new Admin();
-        require __DIR__ . "/../../view/cadastro-funcionarios.php";
+        require __DIR__ . "/../../view/admin/cadastro-funcionarios.php";
     }
 
     public function index()
@@ -61,7 +61,7 @@ class AdminController{
         }catch(Exception $ex){
             echo "Falha ao listar funcionarios" . $ex->getMessage();
         }finally{
-            require __DIR__ . "/../view/lista-funcionarios.php";
+            require __DIR__ . "/../../view/admin/lista-funcionarios.php";
         }
     }
 
@@ -75,7 +75,7 @@ class AdminController{
         }catch(Exception $ex){
             echo "Falha ao buscar funcionario " . $ex->getMessage();
         }finally{
-            require __DIR__ . "/../view/lista-funcionarios.php";
+            require __DIR__ . "/../../view/admin/lista-funcionarios.php";
         }
     }
 

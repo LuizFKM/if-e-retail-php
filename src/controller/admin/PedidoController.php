@@ -40,11 +40,9 @@ class PedidoController{
                 echo "pedido nao encontrado";
             }
             PedidoDAO::deletar($pedido);
+            header('Location: ' . BASE_URL . '/painel-administrativo/pedidos');
         }catch(Exception $ex){
             echo "erro ao remover pedido" . $ex->getMessage();
-        } finally {
-            header('Location: ' . BASE_URL . '/pedidos');
-            exit;
         }
 
     }
