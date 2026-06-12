@@ -39,7 +39,7 @@
                 <td>
                     <a class="btn btn-outline-secondary bi bi-eye" href="<?= BASE_URL . '/produtos/' . $produto->getID() ?>"> Visualizar</a>
                     |
-                    <form method="post" action="<?= BASE_URL . 'painel-admnistrativo/produtos/' . $produto->getID() . '/remover' ?>" style="display:inline">
+                    <form method="post" action="<?= BASE_URL . '/painel-administrativo/produtos/' . $produto->getID() . '/remover' ?>" style="display:inline">
                         <button type="submit" class="btn btn-outline-danger bi bi-trash" onclick="return confirm('Remover produto?')"> Remover</button>
                     </form>
                 </td>

@@ -5,7 +5,7 @@
     <title>Clientes</title>
 </head>
 <body>
-    <?php require_once __DIR__ . "/templates/template-aside-left.php" ?>
+    <?php require_once __DIR__ . "/templates/template-aside-left-admin.php" ?>
         <h1>Clientes</h1>
 
     <?php if (!empty($clientes)): ?>

@@ -6,7 +6,7 @@ class LoginController
 {
     public function index()
     {
-        require __DIR__ . '/../view/login.php';
+        require __DIR__ . '/../view/site/login.php';
     }
 }
 

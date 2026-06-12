@@ -61,7 +61,6 @@ switch ($route[0]) {
         $params = $route[2];
         $controllerClass = str_replace('/', '\\', $controllerClass);
 
-        // Olha como fica limpo:
         $controllerNamespace = "App\\controller\\{$controllerClass}";
         $controller = new $controllerNamespace();
         $controller->$action($params);

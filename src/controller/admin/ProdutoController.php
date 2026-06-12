@@ -72,11 +72,9 @@ class ProdutoController{
                 echo "Produto nao foi encontrado!";
             }
             ProdutoDAO::deletar($produto);
+            header('Location: ' . BASE_URL . '/painel-administrativo/produtos');
         }catch (Exception $ex){
             echo "Falha ao remover produto" . $ex->getMessage();
-        } finally {
-            header('Location: ' . BASE_URL . '/produtos');
-            exit;
         }
     }
 }

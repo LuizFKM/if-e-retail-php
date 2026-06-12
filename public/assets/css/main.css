@@ -9,6 +9,8 @@
     --paper:        #FBF6EC;
     --ink:          #1B120B;
     --line:         #E2D3BB;
+    --brown:        #8E6438;
+    --white:        #FEFEFE;
 }
 
 body {
@@ -112,7 +114,7 @@ table tbody tr:hover {
 }
 
 .menu-cliente{
-    background-color: var(--paper);
+    background-color: var(--white);
     color: var(--coffee);
     font-weight: bold;
     letter-spacing: 1px;
@@ -120,21 +122,92 @@ table tbody tr:hover {
 }
 
 .login-button-cliente{
-    background: var(--coffee-deep);
+    background: var(--coffee);
     color: var(--sand);
     font-weight:bold;
-    border: none;
-    border-radius: 8px;
-    padding: 4px 8px 4px 8px;
+    border: 2px solid var(--coffee);
+    border-radius: 28px;
+    padding: 4px 12px 4px 12px;
+    transition: all 0.6s ease-out;
 
 }
 
+.login-button-cliente:hover {
+    background: none;
+    color: var(--coffee-deep);
+    border: 2px var(--coffee) solid;
+}
+
 .hero{
-    background: var(--line);
+    background: var(--paper);
     min-height: 400px;
-    font-family: sans-serif;
 }
 
 .view-login, .view-cadastro-cliente{
     background-color: var(--sand);
+}
+
+#tag{
+    background-color: var(--white);
+    border: var(--line) solid 3px;
+    max-width: fit-content;
+    font-weight: bold;
+    color: var(--brown);
+}
+
+.slogan{
+    font-family: "Bookman Old Style Sans", serif;
+    color: var(--coffee-deep);
+    span{
+        color: var(--brown);
+    }
+}
+
+.slogan-two{
+    color: var(--coffee-deep);
+    font-family: Outfit, sans-serif;
+    font-weight: bold;
+    line-height: 1.7rem;
+}
+
+.button-style-1{
+    background: var(--coffee);
+    color:var(--white);
+    border: 2px solid var(--coffee);
+    padding: 15px 36px;
+    border-radius: 28px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    letter-spacing: .3px;
+    margin-right: 12px;
+    transition: all 0.3s ease-in-out;
+
+}
+
+.button-style-2 {
+    background: none;
+    color: var(--coffee);
+    border: 2px var(--coffee) solid;
+    padding: 15px 36px;
+    border-radius: 28px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    letter-spacing: .3px;
+    transition: all 0.3s ease-in-out;
+}
+
+
+.button-style-2:hover {
+    background-color: var(--coffee);
+    color: var(--white);
+}
+
+.button-style-1:hover {
+    background: none;
+    color: var(--coffee-deep);
+    border: 2px var(--coffee) solid;
 }

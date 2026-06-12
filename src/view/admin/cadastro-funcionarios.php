@@ -2,11 +2,11 @@
 <!doctype html>
 <html lang="pt-br">
 <head>
-    <?php require_once __DIR__ . "/templates/template-head.php" ?>
+    <?php require_once __DIR__ . "/../templates/template-head.php" ?>
     <title>Cadastro de Funcionário</title>
 </head>
 <body>
-    <?php require_once __DIR__ . "/templates/template-aside-left.php" ?>
+    <?php require_once __DIR__ . "/../templates/template-aside-left-admin.php" ?>
         <h1>Cadastro de Funcionário</h1>
     <h3>Preencha o formulário</h3>
     <div class="form">
@@ -46,6 +46,6 @@
             <button type="submit">Cadastrar</button>
         </form>
     </div>
-    <?php require_once __DIR__ . "/templates/template-rodape.php" ?>
+    <?php require_once __DIR__ . "/../templates/template-rodape.php" ?>
 </body>
 </html>

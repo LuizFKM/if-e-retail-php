@@ -1,31 +1,19 @@
 <?php
 
-namespace test\dao;
+namespace Test\dao;
 
-use dao\PedidoDAO;
-use model\Cliente;
-use dao\ClienteDAO;
-use model\ItemPedido;
-use model\Pedido;
+use App\dao\PedidoDAO;
+use App\model\Cliente;
+use App\dao\ClienteDAO;
+use App\model\ItemPedido;
+use App\model\Pedido;
 use DateTime;
-use model\Produto;
+use App\model\Produto;
 use PHPUnit\Framework\TestCase;
 
 
 class PedidoDAOTest extends TestCase
 {
-
-    private function criarPedido(): Pedido
-    {
-        return new Pedido(new DateTime(), new DateTime("+7 days"), true);
-    }
-
-    private function criarCliente(): Cliente
-    {
-        return new Cliente(
-            "Elis Regina", "222.333.444-55", new \DateTime("1992-06-17"), "hash456", "cliente"
-        );
-    }
 
     public function testSalvar()
     {
