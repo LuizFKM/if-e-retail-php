@@ -26,7 +26,6 @@ class Endereco extends GenericModel
     private $cep;
     #[ORM\Column(type: "string")]
     private $pais;
-    // Correção: #[ORM\Column] solto sem atributo correspondente foi removido
 
     public function __construct($rua, $numero, $complemento, $bairro, $cidade, $estado, $cep, $pais ){
         $this->rua = $rua;
@@ -37,8 +36,6 @@ class Endereco extends GenericModel
         $this->estado = $estado;
         $this->cep = $cep;
         $this->pais = $pais;
-
-
     }
 
     public function setRua($rua){
@@ -88,11 +85,18 @@ class Endereco extends GenericModel
 
     public function setCep($cep){
         $this->cep=$cep;
-
     }
 
     public function getCep(){
         return $this->cep;
     }
 
+    // Novo: necessário para a tela de configurações de endereço
+    public function getPais(){
+        return $this->pais;
+    }
+
+    public function setPais($pais){
+        $this->pais=$pais;
+    }
 }
