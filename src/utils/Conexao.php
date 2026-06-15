@@ -24,12 +24,14 @@ class Conexao{
 
             //configuramos a conexao com o banco
             $connection = DriverManager::getConnection([
-                'driver' => $_ENV['DB_DRIVER'],
-                'host' => $_ENV['DB_HOST'],
-                'port' => $_ENV['DB_PORT'],
-                'dbname' => $_ENV['DB_NAME'],
-                'user' => $_ENV['DB_USER'],
+                'driver'   => $_ENV['DB_DRIVER'],
+                'host'     => $_ENV['DB_HOST'],
+                'port'     => $_ENV['DB_PORT'],
+                'dbname'   => $_ENV['DB_NAME'],
+                'user'     => $_ENV['DB_USER'],
                 'password' => $_ENV['DB_PASSWORD'],
+                // Evita que acentos (São Paulo, Brasília) sejam gravados corrompidos
+                'charset'  => 'utf8mb4',
             ], $config);
             //instancia e coloca os parametros que configuramos
             self::$entityManager = new EntityManager($connection, $config);

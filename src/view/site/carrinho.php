@@ -62,14 +62,15 @@
                                 R$ <?= number_format($item->getPreco() * $item->getQuantidade(), 2, ',', '.') ?>
                             </td>
                             <td class="text-end">
-                                <!-- Remover item -->
-                                <form method="POST"
-                                      action="<?= BASE_URL . '/carrinho/item/' . $item->getID() . '/remover' ?>"
-                                      onsubmit="return confirm('Remover item do carrinho?')">
-                                    <button type="submit" class="btn btn-sm btn-outline-danger">
-                                        <i class="bi bi-trash"></i>
-                                    </button>
-                                </form>
+                                <!-- Botão que abre o modal de confirmação -->
+                                <button type="button"
+                                        class="btn btn-sm btn-outline-danger"
+                                        onclick="confirmarRemocao(
+                                            '<?= BASE_URL . '/carrinho/item/' . $item->getID() . '/remover' ?>',
+                                            '<?= htmlspecialchars($item->getProduto()->getDescricao(), ENT_QUOTES) ?>'
+                                        )">
+                                    <i class="bi bi-trash"></i>
+                                </button>
                             </td>
                         </tr>
                     <?php endforeach; ?>
@@ -91,15 +92,66 @@
                 <i class="bi bi-arrow-left me-1"></i>Continuar comprando
             </a>
 
-            <form method="POST" action="<?= BASE_URL . '/carrinho/finalizar' ?>"
-                  onsubmit="return confirm('Confirmar finalização da compra?')">
-                <button type="submit" class="btn btn-amber btn-lg">
+            <form id="formFinalizar" method="POST" action="<?= BASE_URL . '/carrinho/finalizar' ?>">
+                <button type="button" class="btn btn-amber btn-lg" onclick="confirmarFinalizacao()">
                     <i class="bi bi-bag-check me-2"></i>Finalizar compra
                 </button>
             </form>
         </div>
     <?php endif; ?>
 </div>
+
+<form id="formRemoverItem" method="POST" style="display:none;"></form>
+
+<script>
+function confirmarFinalizacao() {
+    Swal.fire({
+        title: 'Finalizar compra?',
+        html: 'Seu pedido será confirmado e enviado para processamento.',
+        icon: 'question',
+        iconColor: '#C68A4C',
+        showCancelButton: true,
+        confirmButtonText: '<i class="bi bi-bag-check me-1"></i> Confirmar pedido',
+        cancelButtonText: 'Voltar',
+        confirmButtonColor: '#C68A4C',
+        cancelButtonColor: '#6c757d',
+        customClass: {
+            popup: 'rounded-4',
+            confirmButton: 'rounded-pill px-4',
+            cancelButton: 'rounded-pill px-4'
+        }
+    }).then(function (result) {
+        if (result.isConfirmed) {
+            document.getElementById('formFinalizar').submit();
+        }
+    });
+}
+
+function confirmarRemocao(action, nomeProduto) {
+    Swal.fire({
+        title: 'Remover item?',
+        html: 'O produto <strong>' + nomeProduto + '</strong> será removido do carrinho.',
+        icon: 'warning',
+        iconColor: '#C68A4C',
+        showCancelButton: true,
+        confirmButtonText: '<i class="bi bi-trash3 me-1"></i> Sim, remover',
+        cancelButtonText: 'Cancelar',
+        confirmButtonColor: '#dc3545',
+        cancelButtonColor: '#6c757d',
+        borderRadius: '16px',
+        customClass: {
+            popup: 'rounded-4',
+            confirmButton: 'rounded-pill px-4',
+            cancelButton: 'rounded-pill px-4'
+        }
+    }).then(function (result) {
+        if (result.isConfirmed) {
+            document.getElementById('formRemoverItem').action = action;
+            document.getElementById('formRemoverItem').submit();
+        }
+    });
+}
+</script>
 
 <?php require_once __DIR__ . "/../templates/template-rodape.php" ?>
 </body>

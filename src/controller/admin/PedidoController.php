@@ -1,6 +1,7 @@
 <?php
 namespace App\controller\admin;
 
+use App\dao\ItemPedidoDAO;
 use App\dao\PedidoDAO;
 use Exception;
 
@@ -23,13 +24,16 @@ class PedidoController{
             $id = $params['id'];
             $pedido = PedidoDAO::buscarPorId($id);
             if(empty($pedido)){
-                echo "pedido nao encontrado";
+                throw new Exception("Pedido não encontrado.");
             }
+            $itensPedido = ItemPedidoDAO::buscarPorPedido($pedido);
+            ob_start();
+            require __DIR__ . "/../../view/admin/visualizar-pedido.php";
+            $conteudo = ob_get_clean();
         }catch(Exception $ex){
-            echo "erro ao buscar pedido" . $ex->getMessage();
-        } finally {
-            require __DIR__ . "/../../view/lista-pedidos.php";
+            echo "Erro ao buscar pedido: " . $ex->getMessage();
         }
+        require __DIR__ . "/../../view/layouts/painel-admin-layout.php";
     }
 
     public function remover(array $params){

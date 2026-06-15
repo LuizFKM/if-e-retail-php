@@ -12,5 +12,7 @@
 <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
 <!-- Importação do jQuery Mask -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+<!-- Importação do SweetAlert2 -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <!-- Importação do arquivo main.js -->
-<script src="<?= BASE_URL . '/assets/js/main.js' ?>"></script>
+<script src="<?= BASE_URL . '/public/assets/js/main.js' ?>"></script>

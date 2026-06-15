@@ -38,6 +38,8 @@ $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) 
     // ===== Dev (remover antes de ir para produção) =====
     // Auto-login com o primeiro cliente do banco — acesse /dev/auto-login para entrar sem senha
     $r->get('/dev/auto-login', 'DevController@autoLogin');
+    // Popula tb_cidade com as capitais brasileiras — acesse /dev/seed-cidades uma única vez
+    $r->get('/dev/seed-cidades', 'DevController@seedCidades');
 
     // ===== View Cliente (novas telas) =====
 
