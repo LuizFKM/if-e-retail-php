@@ -53,6 +53,26 @@
         </div>
     </nav>
 </div>
+<div class="fita-container text-white overflow-hidden">
+    <!-- Contêiner principal escondendo o que vaza da tela -->
+    <div class="d-flex overflow-hidden text-white py-2">
+
+        <!-- Bloco 1: O texto principal -->
+        <div class="fita-conteudo">
+            <span class="mx-4">🎉 Primeira compra? Ganhe 10% com o cupom: <strong>PRIMEIRA10</strong></span>
+            <span class="mx-4">   Frete grátis em compras acima de R$199</span>
+            <span class="mx-4">🎉 Primeira compra? Ganhe 10% com o cupom: <strong>PRIMEIRA10</strong></span>
+        </div>
+
+        <!-- Bloco 2: Cópia exata do Bloco 1 para cobrir o buraco e não dar intervalo -->
+        <div class="fita-conteudo">
+            <span class="mx-4">🎉 Primeira compra? Ganhe 10% com o cupom: <strong>PRIMEIRA10</strong></span>
+            <span class="mx-4">Frete grátis em compras acima de R$199</span>
+            <span class="mx-4">🎉 Primeira compra? Ganhe 10% com o cupom: <strong>PRIMEIRA10</strong></span>
+        </div>
+
+    </div>
+</div>
 <style>
     .bi{
         cursor: pointer;
