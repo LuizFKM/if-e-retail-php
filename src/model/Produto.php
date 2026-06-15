@@ -17,6 +17,9 @@ class Produto extends GenericModel
     #[ORM\Column(type: "decimal", precision: 10, scale: 2)]
     private $precoUnitario;
 
+    #[ORM\Column(type: 'string', nullable: true)]
+    private $urlFotoProduto;
+
 
     public function setDescricao($descricao)
     {

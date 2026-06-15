@@ -157,6 +157,7 @@ table tbody tr:hover {
     font-size: 12px;
     padding: 2px 16px 2px 16px;
     letter-spacing: 4px;
+    cursor: default;
 
 }
 
@@ -216,4 +217,23 @@ table tbody tr:hover {
     background: none;
     color: var(--coffee-deep);
     border: 2px var(--coffee) solid;
+}
+
+.fita-container{
+    background-color: var(--amber-soft);
+}
+
+.fita-conteudo {
+    display: flex;
+    white-space: nowrap;
+    animation: fitaSemIntervalo 25s linear infinite;
+}
+
+@keyframes fitaSemIntervalo {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
 }
