@@ -30,6 +30,14 @@ abstract class UserModel extends GenericModel{
     #[ORM\Column(type:'string')]
     private $tipo;
 
+    // Novo: foto de perfil armazenada via Cloudinary (padrão do professor)
+    #[ORM\Column(type: 'string', nullable: true)]
+    private $urlFotoPerfil;
+
+    public function __construct() {
+        // Inicializa a coleção para que clientes novos possam adicionar contatos sem erro de null
+        $this->contatos = new ArrayCollection();
+    }
 
     public function setName($name){
         $this->name=$name;
@@ -55,12 +63,20 @@ abstract class UserModel extends GenericModel{
         return $this->endereco;
     }
 
+    // Nota: getContato/setContato legados referenciam $this->contato (inexistente).
+    // Use getContatos() para acessar a coleção real de contatos.
     public function setContato($contato){
         $this->contato=$contato;
     }
 
     public function getContato(){
         return $this->contato;
+    }
+
+    // Novo: acesso correto à coleção de contatos (OneToMany)
+    public function getContatos(): Collection
+    {
+        return $this->contatos ?? new ArrayCollection();
     }
 
     public function setDataNascimento($dataNascimento){
@@ -97,6 +113,13 @@ abstract class UserModel extends GenericModel{
         return $this->tipo;
     }
 
-}
+    public function getUrlFotoPerfil()
+    {
+        return $this->urlFotoPerfil;
+    }
 
-?>
+    public function setUrlFotoPerfil($urlFotoPerfil): void
+    {
+        $this->urlFotoPerfil = $urlFotoPerfil;
+    }
+}

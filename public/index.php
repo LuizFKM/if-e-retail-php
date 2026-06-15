@@ -34,6 +34,41 @@ $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) 
     $r->post('/admin/cadastrar', 'AdminController@cadastrar');
     $r->get('/admin/{id}', 'AdminController@buscar');
     $r->post('/admin/{id}/remover', 'AdminController@remover');
+
+    // ===== Dev (remover antes de ir para produção) =====
+    // Auto-login com o primeiro cliente do banco — acesse /dev/auto-login para entrar sem senha
+    $r->get('/dev/auto-login', 'DevController@autoLogin');
+
+    // ===== View Cliente (novas telas) =====
+
+    // Login / sessão
+    $r->post('/login/autenticar', 'LoginController@autenticar');
+    $r->get('/logout', 'LoginController@sair');
+
+    // Vitrine de produtos (cliente) — necessária p/ favoritar e adicionar ao carrinho
+    $r->get('/produtos', 'LojaController@produtos');
+
+    // Favoritos
+    $r->post('/favoritos/{produtoId}/toggle', 'FavoritoController@toggle');
+
+    // Carrinho
+    $r->get('/carrinho', 'CarrinhoController@index');
+    $r->post('/carrinho/adicionar/{produtoId}', 'CarrinhoController@adicionar');
+    $r->post('/carrinho/item/{itemId}/quantidade', 'CarrinhoController@atualizarQuantidade');
+    $r->post('/carrinho/item/{itemId}/remover', 'CarrinhoController@removerItem');
+    $r->post('/carrinho/finalizar', 'CarrinhoController@finalizar');
+
+    // Perfil do cliente (abas)
+    $r->get('/perfil', 'PerfilController@index');                  // redireciona p/ aba padrão
+    $r->get('/perfil/favoritos', 'PerfilController@favoritos');
+    $r->get('/perfil/compras', 'PerfilController@compras');
+    $r->get('/perfil/configuracoes', 'PerfilController@configuracoes');
+
+    // Configurações — ações
+    $r->post('/perfil/dados', 'PerfilController@salvarDados');         // nome, email, telefone, senha
+    $r->post('/perfil/endereco', 'PerfilController@salvarEndereco');   // adicionar/editar endereço
+    $r->post('/perfil/foto', 'PerfilController@salvarFoto');           // upload Cloudinary
+    $r->post('/perfil/excluir', 'PerfilController@excluirConta');      // excluir conta (com confirmação)
 });
 
 $uri = parse_url($_SERVER['REQUEST_URI'])['path'];

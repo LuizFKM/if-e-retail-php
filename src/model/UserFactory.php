@@ -11,7 +11,9 @@ class UserFactory
         };
 
         if ($user instanceof Cliente) {
-            $carrinho = new Carrinho($user, 'ABERTO');
+            // Correção: Carrinho::__construct só aceita ($status). O usuário não é passado
+            // ao carrinho — é o Cliente que referencia o carrinho via setCarrinho().
+            $carrinho = new Carrinho('ABERTO');
             $user->setCarrinho($carrinho);
         }
 

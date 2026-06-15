@@ -3,10 +3,10 @@
 namespace App\dao;
 
 use Exception;
-use model\Cliente;
-use utils\Conexao;
+// Correção: namespaces estavam sem o prefixo App\ — necessário para o autoload PSR-4
+use App\model\Cliente;
+use App\utils\Conexao;
 
-// Ele já herda todos os métodos do GenericDAO
 class ClienteDAO extends GenericDAO
 {
     protected static $modelClass = Cliente::class;
@@ -20,6 +20,19 @@ class ClienteDAO extends GenericDAO
             return $repository->findBy(['cpf' => $cpf]);
         } catch (Exception $ex) {
             throw new Exception("Falha ao buscar cliente por CPF. " . $ex->getMessage());
+        }
+    }
+
+    // Novo: busca por login (email) — usado no fluxo de autenticação da sessão
+    public static function buscarPorLogin($login)
+    {
+        try {
+            $em = Conexao::getEntityManager();
+            $repository = $em->getRepository(Cliente::class);
+            $resultado = $repository->findBy(['login' => $login]);
+            return $resultado ? $resultado[0] : null;
+        } catch (Exception $ex) {
+            throw new Exception("Falha ao buscar cliente por login. " . $ex->getMessage());
         }
     }
 
@@ -44,7 +57,8 @@ class ClienteDAO extends GenericDAO
     {
         try {
             $em = Conexao::getEntityManager();
-            $query = $em->createQuery("SELECT c FROM model\Cliente c WHERE c.name LIKE :name");
+            // Correção: DQL usa nome completo da classe (FQN) no Doctrine 3.x
+            $query = $em->createQuery("SELECT c FROM App\\model\\Cliente c WHERE c.name LIKE :name");
             $query->setParameter('name', '%' . $name . '%');
             return $query->getResult();
         } catch (Exception $ex) {

@@ -28,7 +28,8 @@ class Carrinho extends GenericModel
         return $this->valorTotal;
     }
 
-    public function setValorTotal(int $valorTotal)
+    // Correção: tipo era 'int' mas o campo é decimal — preços têm casas decimais
+    public function setValorTotal($valorTotal)
     {
         $this->valorTotal = $valorTotal;
     }
@@ -52,6 +53,4 @@ class Carrinho extends GenericModel
     {
         $this->itens = $itens;
     }
-
-
 }

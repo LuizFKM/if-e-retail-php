@@ -4,7 +4,8 @@ require_once __DIR__ . '/vendor/autoload.php';
 
 use Doctrine\ORM\Tools\Console\ConsoleRunner;
 use Doctrine\ORM\Tools\Console\EntityManagerProvider\SingleManagerProvider;
-use utils\Conexao;
+// Correção: namespace completo necessário para o autoload PSR-4 funcionar
+use App\utils\Conexao;
 
 ConsoleRunner::run(
     new SingleManagerProvider(Conexao::getEntityManager())
