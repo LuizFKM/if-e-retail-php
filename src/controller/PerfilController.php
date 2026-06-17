@@ -2,6 +2,7 @@
 
 namespace App\controller;
 
+use App\dao\CidadeDAO;
 use App\dao\ClienteDAO;
 use App\dao\ItemPedidoDAO;
 use App\model\Contato;
@@ -46,8 +47,9 @@ class PerfilController
 
     public function configuracoes()
     {
-        $cliente = Sessao::clienteLogado();
-        $ok      = filter_input(INPUT_GET, 'ok');
+        $cliente  = Sessao::clienteLogado();
+        $ok       = filter_input(INPUT_GET, 'ok');
+        $cidades  = CidadeDAO::listar();
 
         ob_start();
         require __DIR__ . '/../view/cliente/perfil-configuracoes.php';

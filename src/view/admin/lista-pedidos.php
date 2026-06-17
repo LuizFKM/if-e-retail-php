@@ -23,7 +23,7 @@
                 <td><?= $pedido->getStatus() ? 'Concluído' : 'Pendente' ?></td>
                 <td><?= htmlspecialchars($pedido->getCliente()?->getName() ?? '-') ?></td>
                 <td>
-                    <a href="<?= BASE_URL . '/pedidos/' . $pedido->getID() ?>">Visualizar</a>
+                    <a href="<?= BASE_URL . '/painel-administrativo/pedidos/' . $pedido->getID() ?>">Visualizar</a>
                     |
                     <form method="post" action="<?= BASE_URL . '/painel-administrativo/pedidos/' . $pedido->getID() . '/remover' ?>" style="display:inline">
                         <button type="submit" onclick="return confirm('Remover pedido?')">Remover</button>
