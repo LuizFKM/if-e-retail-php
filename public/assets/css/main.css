@@ -80,11 +80,47 @@ body {
     color: var(--coffee-deep);
 }
 
+/* ── Admin layout ── */
+.admin-body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.admin-topbar {
+    background: var(--coffee-deep);
+    height: 50px;
+    padding: 0 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-shrink: 0;
+    border-bottom: 1px solid rgba(255,255,255,.07);
+    position: sticky;
+    top: 0;
+    z-index: 200;
+}
+
+.admin-main {
+    background: var(--paper);
+    flex: 1;
+}
+
+/* Mantido para views legadas que ainda referenciam .main-content */
 .main-content {
     background-color: var(--paper);
     flex-grow: 1;
-    padding: 2rem;
     min-height: 100vh;
+}
+
+/* SweetAlert2 — aparência do painel admin */
+.swal-admin-popup {
+    border-radius: 14px !important;
+    font-family: inherit !important;
+}
+.swal2-title {
+    color: var(--coffee) !important;
+    font-size: 1.15rem !important;
 }
 
 a{

@@ -9,7 +9,7 @@
 <div class="container-fluid min-vh-100 d-flex align-items-center justify-content-center">
 
     <!-- Novo: action e method adicionados para enviar para LoginController@autenticar -->
-    <form class="w-100 bg-white bg-opacity-75 p-4 p-md-5 rounded-3 shadow"
+    <form id="formLogin" class="w-100 bg-white bg-opacity-75 p-4 p-md-5 rounded-3 shadow"
           style="max-width: 450px;"
           method="POST"
           action="<?= BASE_URL . '/login/autenticar' ?>">

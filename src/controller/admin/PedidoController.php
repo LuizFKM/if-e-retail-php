@@ -36,19 +36,37 @@ class PedidoController{
         require __DIR__ . "/../../view/layouts/painel-admin-layout.php";
     }
 
-    public function remover(array $params){
-        try{
-            $id = $params['id'];
+    public function remover(array $params)
+    {
+        try {
+            $id     = $params['id'];
             $pedido = PedidoDAO::buscarPorId($id);
-            if(empty($pedido)){
-                echo "pedido nao encontrado";
+            if (empty($pedido)) {
+                throw new Exception("Pedido não encontrado.");
             }
             PedidoDAO::deletar($pedido);
             header('Location: ' . BASE_URL . '/painel-administrativo/pedidos');
-        }catch(Exception $ex){
-            echo "erro ao remover pedido" . $ex->getMessage();
+        } catch (Exception $ex) {
+            header('Location: ' . BASE_URL . '/painel-administrativo/pedidos');
         }
+        exit;
+    }
 
+    public function atualizarStatus(array $params)
+    {
+        try {
+            $id     = $params['id'];
+            $pedido = PedidoDAO::buscarPorId($id);
+            if (empty($pedido)) {
+                throw new Exception("Pedido não encontrado.");
+            }
+            $pedido->setStatus(!$pedido->getStatus());
+            PedidoDAO::salvar($pedido);
+            header('Location: ' . BASE_URL . '/painel-administrativo/pedidos/' . $id);
+        } catch (Exception $ex) {
+            header('Location: ' . BASE_URL . '/painel-administrativo/pedidos');
+        }
+        exit;
     }
 
 }

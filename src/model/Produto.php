@@ -50,4 +50,14 @@ class Produto extends GenericModel
     {
         return $this->precoUnitario;
     }
+
+    public function setUrlFotoProduto($url)
+    {
+        $this->urlFotoProduto = $url;
+    }
+
+    public function getUrlFotoProduto()
+    {
+        return $this->urlFotoProduto;
+    }
 }

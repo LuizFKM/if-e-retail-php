@@ -18,7 +18,9 @@
                 <div class="col-sm-6 col-md-4 col-lg-3">
                     <div class="card h-100 shadow-sm" style="border-color:var(--line);">
                         <div class="card-body d-flex flex-column">
-                            <img class="mb-1" src="https://placehold.co/200" alt="imagem-do-produto">
+                            <img class="mb-1"
+                                 src="<?= htmlspecialchars($produto->getUrlFotoProduto() ?? 'https://placehold.co/200') ?>"
+                                 alt="<?= htmlspecialchars($produto->getDescricao()) ?>">
                             <h6 class="card-title fw-bold" style="color:var(--coffee);">
                                 <?= htmlspecialchars($produto->getDescricao()) ?>
                             </h6>
