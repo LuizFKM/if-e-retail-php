@@ -7,6 +7,7 @@
 <body>
 <?php require_once __DIR__ . "/../templates/template-aside-left-admin.php" ?>
 <?php echo $conteudo ?? ''; ?>
+<?php require_once __DIR__ . "/../templates/template-footer.php" ?>
 <?php require_once __DIR__ . "/../templates/template-rodape.php" ?>
 </body>
 </html>

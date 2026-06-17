@@ -70,9 +70,67 @@
                 </div>
             </div>
         </section>
-    <section class="em-destaque">
 
+        <section class="em-destaque">
+            <div class="container">
+                <p class="section-title">Em Destaque</p>
+                <div class=" pb-5 em-destaque-content d-flex flex-wrap gap-4 justify-content-center">
+
+                    <?php
+                    if (!empty($produtos)):
+                        foreach (array_slice($produtos, 0, 3) as $produto):
+                            ?>
+                            <div class="card" style="width: 18rem;">
+                                <div class="card-body d-flex flex-column">
+                                    <img class="mb-2" src="https://placehold.co/200" alt="imagem-do-produto">
+                                    <h6 class="card-title fw-bold">
+                                        <?= htmlspecialchars($produto->getDescricao()) ?>
+                                    </h6>
+                                    <p class="fw-bold mt-auto mb-3" >
+                                        R$ <?= number_format($produto->getPrecoUnitario(), 2, ',', '.') ?>
+                                    </p>
+
+                                    <div class="d-flex gap-2">
+                                        <?php $ehFavorito = in_array($produto->getID(), $favoritoIds ?? []); ?>
+                                        <?php if (!empty($_SESSION['cliente_id'])): ?>
+                                            <form method="POST"
+                                                  action="<?= BASE_URL . '/favoritos/' . $produto->getID() . '/toggle' ?>">
+                                                <button type="submit"
+                                                        class="btn btn-sm"
+                                                        style="color:<?= $ehFavorito ? 'var(--amber)' : 'var(--coffee)' ?>;border:1px solid var(--line);"
+                                                        title="<?= $ehFavorito ? 'Remover dos favoritos' : 'Adicionar aos favoritos' ?>">
+                                                    <i class="bi <?= $ehFavorito ? 'bi-heart-fill' : 'bi-heart' ?>"></i>
+                                                </button>
+                                            </form>
+                                        <?php else: ?>
+                                            <a href="<?= BASE_URL . '/login' ?>"
+                                               class="btn btn-sm"
+                                               style="color:var(--coffee);border:1px solid var(--line);"
+                                               title="Faça login para favoritar">
+                                                <i class="bi bi-heart"></i>
+                                            </a>
+                                        <?php endif; ?>
+
+                                        <form method="POST"
+                                              action="<?= BASE_URL . '/carrinho/adicionar/' . $produto->getID() ?>"
+                                              class="flex-grow-1">
+                                            <button type="submit" class="btn btn-amber btn-sm w-100">
+                                                <i class="bi bi-cart-plus me-1"></i>Adicionar
+                                            </button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php
+                        endforeach;
+                    else:
+                        ?>
+                        <p class="text-muted">Nenhum produto em destaque no momento.</p>
+                    <?php endif; ?>
+                </div>
+            </div>
     </section>
+    <?php require_once __DIR__ . "/../templates/template-footer.php" ?>
     <?php require_once __DIR__ . "/../templates/template-rodape.php" ?>
 </body>
 </html>

@@ -3,67 +3,6 @@
 <head>
     <?php require_once __DIR__ . "/../templates/template-head.php" ?>
     <title>Meu Perfil — IF Retail</title>
-    <style>
-    /* ── Abas de navegação do perfil ── */
-    .perfil-nav .nav-link {
-        color: var(--brown);
-        border-radius: 10px;
-        padding: .5rem 1rem;
-        font-weight: 600;
-        font-size: .88rem;
-        border: 1.5px solid transparent;
-        transition: background .15s, color .15s, border-color .15s;
-        display: flex;
-        align-items: center;
-        gap: .4rem;
-    }
-    .perfil-nav .nav-link:hover {
-        background: var(--cream);
-        color: var(--coffee);
-    }
-    .perfil-nav .nav-link.active {
-        background: var(--amber);
-        color: var(--coffee-deep);
-        border-color: var(--amber);
-    }
-    /* ── Banner do cabeçalho ── */
-    .perfil-banner {
-        background: linear-gradient(135deg, var(--coffee-deep) 0%, var(--coffee) 100%);
-        border-radius: 16px;
-        padding: 1.75rem 2rem;
-        margin-bottom: 1.5rem;
-        position: relative;
-        overflow: hidden;
-    }
-    .perfil-banner::before {
-        content: '';
-        position: absolute;
-        top: -30px; right: -30px;
-        width: 160px; height: 160px;
-        border-radius: 50%;
-        background: rgba(198,138,76,.15);
-    }
-    .perfil-banner::after {
-        content: '';
-        position: absolute;
-        bottom: -40px; left: 40%;
-        width: 120px; height: 120px;
-        border-radius: 50%;
-        background: rgba(198,138,76,.08);
-    }
-    .avatar-perfil {
-        width: 72px; height: 72px;
-        border: 3px solid var(--amber);
-        object-fit: cover;
-        flex-shrink: 0;
-    }
-    .avatar-placeholder {
-        width: 72px; height: 72px;
-        border: 3px solid var(--amber);
-        background: rgba(198,138,76,.15);
-        flex-shrink: 0;
-    }
-    </style>
 </head>
 <body>
 <?php require_once __DIR__ . "/../templates/template-menu-cliente.php" ?>
@@ -125,6 +64,8 @@
     <?php echo $conteudo ?? ''; ?>
 
 </div>
+
+<?php require_once __DIR__ . "/../templates/template-footer.php" ?>
 
 <?php require_once __DIR__ . "/../templates/template-rodape.php" ?>
 </body>
