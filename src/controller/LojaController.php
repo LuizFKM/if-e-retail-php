@@ -6,10 +6,12 @@ use App\dao\ClienteDAO;
 use App\dao\ProdutoDAO;
 use Exception;
 
-// Novo: controller da vitrine de produtos para o cliente
 class LojaController
 {
-    public function produtos()
+    /**
+     * Renderiza a Página Inicial (Home) com destaques
+     */
+    public function index()
     {
         try {
             $produtos = ProdutoDAO::listar();
@@ -17,7 +19,33 @@ class LojaController
             $produtos = [];
         }
 
-        // Monta conjunto de IDs de favoritos do cliente logado (se houver sessão ativa)
+        // Busca os favoritos usando o método auxiliar privado abaixo
+        $favoritoIds = $this->carregarFavoritosLogado();
+
+        // Alimenta a view específica da Home
+        require __DIR__ . '/../view/site/home.php';
+    }
+
+    /**
+     * Renderiza a página de listagem completa de produtos
+     */
+    public function produtos()
+    {
+        try {
+            // Busca todos os produtos para listar na vitrine completa
+            $produtos = ProdutoDAO::listar();
+        } catch (Exception $ex) {
+            $produtos = [];
+        }
+
+        $favoritoIds = $this->carregarFavoritosLogado();
+
+        // Alimenta a view específica de Produtos
+        require __DIR__ . '/../view/site/produtos.php';
+    }
+
+    private function carregarFavoritosLogado()
+    {
         $favoritoIds = [];
         if (!empty($_SESSION['cliente_id'])) {
             try {
@@ -28,10 +56,9 @@ class LojaController
                     }
                 }
             } catch (Exception $ex) {
-                // Sessão pode estar desatualizada — não quebra a vitrine
+                // Erro silencioso para não quebrar a navegação se a sessão falhar
             }
         }
-
-        require __DIR__ . '/../view/site/produtos.php';
+        return $favoritoIds;
     }
 }

@@ -6,7 +6,7 @@ require "../vendor/autoload.php";
 define('BASE_URL', '/if-e-retail-php');
 
 $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) {
-    $r->get('/', 'HomeController@index');
+    $r->get('/', 'LojaController@index');
     $r->get('/painel-administrativo', 'admin\AdminController@index');
     $r->get('/login', 'LoginController@index');
     // Clientes

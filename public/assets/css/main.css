@@ -237,3 +237,85 @@ table tbody tr:hover {
         transform: translateX(-100%);
     }
 }
+
+.em-destaque{
+
+    background-color: var(--sand);
+    margin-bottom: 10px;
+    height: fit-content;
+}
+
+.section-title{
+    padding-top: 12px;
+    font-size: 36px;
+    font-family: "Bookman Old Style Sans", serif;
+    color: var(--coffee-deep);
+}
+
+.em-destaque-content{
+    margin-top: 10px;
+}
+
+ .perfil-nav .nav-link {
+     color: var(--brown);
+     border-radius: 10px;
+     padding: .5rem 1rem;
+     font-weight: 600;
+     font-size: .88rem;
+     border: 1.5px solid transparent;
+     transition: background .15s, color .15s, border-color .15s;
+     display: flex;
+     align-items: center;
+     gap: .4rem;
+ }
+.perfil-nav .nav-link:hover {
+    background: var(--cream);
+    color: var(--coffee);
+}
+.perfil-nav .nav-link.active {
+    background: var(--amber);
+    color: var(--coffee-deep);
+    border-color: var(--amber);
+}
+/* ── Banner do cabeçalho ── */
+.perfil-banner {
+    background: linear-gradient(135deg, var(--coffee-deep) 0%, var(--coffee) 100%);
+    border-radius: 16px;
+    padding: 1.75rem 2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    overflow: hidden;
+}
+.perfil-banner::before {
+    content: '';
+    position: absolute;
+    top: -30px; right: -30px;
+    width: 160px; height: 160px;
+    border-radius: 50%;
+    background: rgba(198,138,76,.15);
+}
+.perfil-banner::after {
+    content: '';
+    position: absolute;
+    bottom: -40px; left: 40%;
+    width: 120px; height: 120px;
+    border-radius: 50%;
+    background: rgba(198,138,76,.08);
+}
+.avatar-perfil {
+    width: 72px; height: 72px;
+    border: 3px solid var(--amber);
+    object-fit: cover;
+    flex-shrink: 0;
+}
+.avatar-placeholder {
+    width: 72px; height: 72px;
+    border: 3px solid var(--amber);
+    background: rgba(198,138,76,.15);
+    flex-shrink: 0;
+}
+
+.rodape-site{
+    background-color: var(--white);
+    box-shadow: 0px -4px 8px rgba(0, 0, 0, 0.15);
+}
