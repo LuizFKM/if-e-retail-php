@@ -141,7 +141,7 @@ $fotoAtual = $cliente->getUrlFotoPerfil();
         </div>
 
         <!-- Formulário de dados pessoais -->
-        <form method="POST" action="<?= BASE_URL . '/perfil/dados' ?>">
+        <form id="formDados" method="POST" action="<?= BASE_URL . '/perfil/dados' ?>">
             <div class="row g-3">
                 <div class="col-md-6">
                     <label class="form-label fw-semibold small" style="color:var(--coffee);">
@@ -205,7 +205,7 @@ $fotoAtual = $cliente->getUrlFotoPerfil();
         <span class="badge-secao ms-auto">ENTREGA</span>
     </div>
     <div class="card-body p-4">
-        <form method="POST" action="<?= BASE_URL . '/perfil/endereco' ?>">
+        <form id="formEndereco" method="POST" action="<?= BASE_URL . '/perfil/endereco' ?>">
             <div class="row g-3">
                 <div class="col-md-8">
                     <label class="form-label fw-semibold small" style="color:var(--coffee);">
@@ -369,7 +369,7 @@ $fotoAtual = $cliente->getUrlFotoPerfil();
             <div class="modal-footer" style="background:#fafafa;">
                 <button type="button" class="btn btn-outline-secondary rounded-pill px-4"
                         data-bs-dismiss="modal">Cancelar</button>
-                <form method="POST" action="<?= BASE_URL . '/perfil/excluir' ?>">
+                <form id="formExcluir" method="POST" action="<?= BASE_URL . '/perfil/excluir' ?>">
                     <button type="submit" class="btn btn-danger rounded-pill px-4">
                         <i class="bi bi-trash3 me-1"></i>Sim, excluir
                     </button>
@@ -379,63 +379,3 @@ $fotoAtual = $cliente->getUrlFotoPerfil();
     </div>
 </div>
 
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-    var avatarWrapper = document.getElementById('avatarWrapper');
-    var avatarOverlay = document.getElementById('avatarOverlay');
-    var inputImagem   = document.getElementById('imagem_cliente');
-    var previewFoto   = document.getElementById('previewNovaFoto');
-
-    if (avatarWrapper && avatarOverlay) {
-        avatarWrapper.addEventListener('mouseenter', function () { avatarOverlay.style.opacity = 1; });
-        avatarWrapper.addEventListener('mouseleave', function () { avatarOverlay.style.opacity = 0; });
-    }
-
-    if (inputImagem) {
-        inputImagem.addEventListener('change', function () {
-            var file = this.files[0];
-            if (!file) return;
-            var reader = new FileReader();
-            reader.onload = function (e) {
-                previewFoto.src = e.target.result;
-                new bootstrap.Modal(document.getElementById('modalPreviewFoto')).show();
-            };
-            reader.readAsDataURL(file);
-        });
-    }
-});
-
-function cancelarPreview() {
-    document.getElementById('imagem_cliente').value = '';
-}
-</script>
-
-<script>
-(function () {
-    var selEstado = document.getElementById('selectEstado');
-    var selCidade = document.getElementById('selectCidade');
-
-    if (!selEstado || !selCidade) return;
-
-    var todasCidades = Array.from(selCidade.querySelectorAll('option[data-uf]')).map(function (opt) {
-        return { valor: opt.value, uf: opt.dataset.uf };
-    });
-
-    function popularCidades(uf, cidadeSalva) {
-        selCidade.innerHTML = '<option value="">Selecione a cidade...</option>';
-        if (!uf) { selCidade.disabled = true; return; }
-
-        todasCidades.filter(function (c) { return c.uf === uf; }).forEach(function (c) {
-            var opt = document.createElement('option');
-            opt.value = c.valor;
-            opt.textContent = c.valor;
-            if (c.valor === cidadeSalva) opt.selected = true;
-            selCidade.appendChild(opt);
-        });
-        selCidade.disabled = false;
-    }
-
-    selEstado.addEventListener('change', function () { popularCidades(this.value, null); });
-    popularCidades(selEstado.value, selCidade.value);
-}());
-</script>

@@ -18,42 +18,37 @@
                     </div>
                     <div class="col">
                         <div id="carouselExample" class="carousel slide carousel-dark" data-bs-ride="carousel">
-                            <div class="carousel-inner pb-5"> <div class="carousel-item active">
-                                    <div class="d-flex justify-content-center">
-                                        <div class="card" style="width: 18rem;">
-                                            <img src="https://placehold.co/200" class="card-img-top" alt="Imagem do Produto 1">
-                                            <div class="card-body text-center">
-                                                <h5 class="card-title">Nome do Produto 1</h5>
-                                                <p class="card-text fw-bold">R$ 99,90</p>
+                            <div class="carousel-inner pb-5">
+                                <?php
+                                $carouselProdutos = !empty($produtos) ? array_slice($produtos, 0, 3) : [];
+                                if (empty($carouselProdutos)):
+                                ?>
+                                    <div class="carousel-item active">
+                                        <div class="d-flex justify-content-center">
+                                            <div class="card" style="width: 18rem;">
+                                                <img src="https://placehold.co/200" class="card-img-top" alt="Em breve">
+                                                <div class="card-body text-center">
+                                                    <h5 class="card-title">Em breve</h5>
+                                                    <p class="card-text fw-bold">—</p>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-
-                                <div class="carousel-item">
-                                    <div class="d-flex justify-content-center">
-                                        <div class="card" style="width: 18rem;">
-                                            <img src="https://placehold.co/200" class="card-img-top" alt="Imagem do Produto 2">
-                                            <div class="card-body text-center">
-                                                <h5 class="card-title">Nome do Produto 2</h5>
-                                                <p class="card-text fw-bold">R$ 149,90</p>
+                                <?php else: foreach ($carouselProdutos as $i => $cp): ?>
+                                    <div class="carousel-item <?= $i === 0 ? 'active' : '' ?>">
+                                        <div class="d-flex justify-content-center">
+                                            <div class="card" style="width: 18rem;">
+                                                <img src="<?= htmlspecialchars($cp->getUrlFotoProduto() ?? 'https://placehold.co/200') ?>"
+                                                     class="card-img-top"
+                                                     alt="<?= htmlspecialchars($cp->getDescricao()) ?>">
+                                                <div class="card-body text-center">
+                                                    <h5 class="card-title"><?= htmlspecialchars($cp->getDescricao()) ?></h5>
+                                                    <p class="card-text fw-bold">R$ <?= number_format($cp->getPrecoUnitario(), 2, ',', '.') ?></p>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-
-                                <div class="carousel-item">
-                                    <div class="d-flex justify-content-center">
-                                        <div class="card" style="width: 18rem;">
-                                            <img src="https://placehold.co/200" class="card-img-top" alt="Imagem do Produto 3">
-                                            <div class="card-body text-center">
-                                                <h5 class="card-title">Nome do Produto 3</h5>
-                                                <p class="card-text fw-bold">R$ 199,90</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
+                                <?php endforeach; endif; ?>
                             </div>
 
                             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
@@ -82,7 +77,9 @@
                             ?>
                             <div class="card" style="width: 18rem;">
                                 <div class="card-body d-flex flex-column">
-                                    <img class="mb-2" src="https://placehold.co/200" alt="imagem-do-produto">
+                                    <img class="mb-2"
+                                         src="<?= htmlspecialchars($produto->getUrlFotoProduto() ?? 'https://placehold.co/200') ?>"
+                                         alt="<?= htmlspecialchars($produto->getDescricao()) ?>">
                                     <h6 class="card-title fw-bold">
                                         <?= htmlspecialchars($produto->getDescricao()) ?>
                                     </h6>

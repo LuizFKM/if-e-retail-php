@@ -157,7 +157,7 @@ use App\dao\ItemPedidoDAO;
                                                         <i class="bi bi-box-seam" style="color:var(--amber);font-size:.85rem;"></i>
                                                     </div>
                                                     <span class="fw-semibold small" style="color:var(--coffee);">
-                                                        <?= htmlspecialchars($item->getProduto()->getDescricao()) ?>
+                                                        <?= htmlspecialchars($item->getProduto()?->getDescricao() ?? 'Produto removido') ?>
                                                     </span>
                                                 </div>
                                             </td>
