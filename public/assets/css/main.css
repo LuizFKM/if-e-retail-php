@@ -176,7 +176,7 @@ table tbody tr:hover {
 
 .hero{
     background: var(--paper);
-    min-height: 400px;
+    max-height: 100vh;
 }
 
 .view-login, .view-cadastro-cliente{
@@ -277,7 +277,6 @@ table tbody tr:hover {
 .em-destaque{
 
     background-color: var(--sand);
-    margin-bottom: 10px;
     height: fit-content;
 }
 
@@ -354,4 +353,35 @@ table tbody tr:hover {
 .rodape-site{
     background-color: var(--white);
     box-shadow: 0px -4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Define um tamanho fixo para as imagens do card */
+.carousel-item .card-img-top{
+    height: 400px; /* Escolha a altura que ficar melhor no seu layout */
+    object-fit: cover; /* Corta a imagem perfeitamente para caber no espaço sem distorcer */
+    object-position: center; /* Centraliza o corte da imagem */
+    width: 100%;
+
+}
+
+
+.carousel-item .card {
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-img{
+    height: 400px;
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+}
+
+.card-img-produtos{
+    height: 300px;
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+    border-radius: 8px;
 }

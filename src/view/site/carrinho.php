@@ -1,3 +1,4 @@
+<?php /** @var App\model\Carrinho $carrinho */ ?>
 <!doctype html>
 <html lang="pt-BR">
 <head>

@@ -1,4 +1,4 @@
-<footer class="rodape-site mt-5 pt-5 pb-3">
+<footer class="rodape-site pt-5 pb-3">
     <div class="container">
         <div class="row mb-4">
             <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">

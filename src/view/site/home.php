@@ -77,7 +77,7 @@
                             ?>
                             <div class="card" style="width: 18rem;">
                                 <div class="card-body d-flex flex-column">
-                                    <img class="mb-2"
+                                    <img class="mb-2 card-img"
                                          src="<?= htmlspecialchars($produto->getUrlFotoProduto() ?? 'https://placehold.co/200') ?>"
                                          alt="<?= htmlspecialchars($produto->getDescricao()) ?>">
                                     <h6 class="card-title fw-bold">
