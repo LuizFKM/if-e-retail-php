@@ -9,6 +9,7 @@ $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) 
     $r->get('/', 'LojaController@index');
     $r->get('/painel-administrativo', 'admin\AdminController@index');
     $r->get('/login', 'LoginController@index');
+
     // Clientes
     $r->get('/clientes', 'ClienteController@listar');
     $r->get('/clientes/novo', 'ClienteController@novo');
@@ -20,26 +21,15 @@ $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) 
     $r->get('/painel-administrativo/produtos', 'admin\ProdutoController@listar');
     $r->get('/painel-administrativo/produtos/novo', 'admin\ProdutoController@novo');
     $r->post('/painel-administrativo/produtos/cadastrar', 'admin\ProdutoController@cadastrar');
-    $r->get('/painel-administrativo/produtos/{id}', 'admin\ProdutoController@buscar');
+    $r->get('/painel-administrativo/produtos/{id}/editar', 'admin\ProdutoController@editar');
     $r->post('/painel-administrativo/produtos/{id}/remover', 'admin\ProdutoController@remover');
 
     // Pedidos
     $r->get('/painel-administrativo/pedidos', 'admin\PedidoController@listar');
     $r->get('/painel-administrativo/pedidos/{id}', 'admin\PedidoController@buscar');
     $r->post('/painel-administrativo/pedidos/{id}/remover', 'admin\PedidoController@remover');
+    $r->post('/painel-administrativo/pedidos/{id}/status', 'admin\PedidoController@atualizarStatus');
 
-    // Admin
-    $r->get('/admin', 'AdminController@listar');
-    $r->get('/admin/novo', 'AdminController@novo');
-    $r->post('/admin/cadastrar', 'AdminController@cadastrar');
-    $r->get('/admin/{id}', 'AdminController@buscar');
-    $r->post('/admin/{id}/remover', 'AdminController@remover');
-
-    // ===== Dev (remover antes de ir para produção) =====
-    // Auto-login com o primeiro cliente do banco — acesse /dev/auto-login para entrar sem senha
-    $r->get('/dev/auto-login', 'DevController@autoLogin');
-    // Popula tb_cidade com as capitais brasileiras — acesse /dev/seed-cidades uma única vez
-    $r->get('/dev/seed-cidades', 'DevController@seedCidades');
 
     // ===== View Cliente (novas telas) =====
 
